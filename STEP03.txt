@@ -25,4 +25,17 @@ export class EventService {
   }
 }
 
+And add this service into the module deinition in app.module.ts:
 
+import { EventService } from './event.service';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule
+  ],
+  providers: [EventService],
+  bootstrap: [AppComponent]
+})
