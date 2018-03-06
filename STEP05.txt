@@ -1,0 +1,16 @@
+
+Step 05: Display the information on the screen
+
+Add to the HTML file app.component.html:
+
+<h2>Data received:</h2>
+<table>
+  <tr>
+    <td>Last Event Id</td><td>Data</td>
+  </tr>
+  <tr *ngFor="let event of eventList">
+    <td>{{event?.lastEventId}}</td><td>{{event?.data}}</td>
+  </tr>
+</table>
+
+And enjoy...
