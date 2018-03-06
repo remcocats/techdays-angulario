@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-const EventSource: any = window['EventSource'];
+import EventSourcePolyfill from './event-source-polyfill';
 
 @Injectable()
 export class EventService {
@@ -9,7 +9,7 @@ export class EventService {
 
   getEvents(sseUrl: string) {
     return new Observable<any>(obs => {
-      const es = new EventSource(sseUrl);
+      const es = new EventSourcePolyfill(sseUrl);
       es.addEventListener('message', evt => {
         obs.next(evt);
       });

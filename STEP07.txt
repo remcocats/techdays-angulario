@@ -1,0 +1,9 @@
+
+Step 7: Adjust the timeout and delay settings
+
+Set the timeout in millisecond of to a time period that will be shorter
+then the time it will take the server to send all values
+
+Observe how the polyfill sets the "Last-EventId" header to get back the events from the last one it received.
+
+
