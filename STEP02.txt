@@ -12,3 +12,11 @@ app.use('/api', proxy({target: 'http://localhost:8080', ws: true, changeOrigin: 
 app.use('/', proxy({target: 'http://localhost:4200', changeOrigin: true}));
 app.listen(80);
 
+From the project root:
+
+>sudo node proxy/index.js
+
+You should now be able to load the angular app by the url http://localhost
+You should be able call the backend service by:
+
+>curl http://localhost/api
