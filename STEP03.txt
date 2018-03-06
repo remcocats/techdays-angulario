@@ -1,0 +1,28 @@
+
+Step 03: Create a service that returns an Observable
+
+https://developer.mozilla.org/en-US/docs/Web/API/EventSource
+
+import { Injectable } from '@angular/core';
+import {Observable} from 'rxjs/Observable';
+const EventSource: any = window['EventSource'];
+
+@Injectable()
+export class EventService {
+  constructor() {}
+
+  getEvents(sseUrl: string) {
+    return new Observable<any>(obs => {
+      const es = new EventSource(sseUrl);
+      es.addEventListener('message', evt => {
+        obs.next(evt);
+      });
+      es.addEventListener('error', err => {
+        es.close();
+      });
+      return () => es.close();
+    });
+  }
+}
+
+
