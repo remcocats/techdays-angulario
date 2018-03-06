@@ -1,0 +1,10 @@
+
+Step 1: Install Angular CLI
+
+https://github.com/angular/angular-cli
+
+>npm install -g @angular/cli
+>ng new <project name>
+>cd <project name>
+>ng serve
+
